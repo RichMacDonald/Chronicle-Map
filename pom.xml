@@ -17,7 +17,7 @@
 
     <artifactId>chronicle-map</artifactId>
 
-    <version>2026.2-SNAPSHOT</version>
+    <version>2026.2-SNAPSHOT-rjm</version>
     <name>OpenHFT/Chronicle-Map</name>
     <description>Chronicle-Map</description>
     <packaging>bundle</packaging>
@@ -41,6 +41,13 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- had to move to front to override the bom-->
+            <dependency>
+                <groupId>net.openhft</groupId>
+                <artifactId>chronicle-core</artifactId>
+                <version>2026.4-SNAPSHOT-rjm</version>
+            </dependency>
+
             <dependency>
                 <groupId>net.openhft</groupId>
                 <artifactId>chronicle-bom</artifactId>
@@ -53,6 +60,14 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <!-- had to move to front to override the bom-->
+        <dependency>
+            <groupId>net.openhft</groupId>
+            <artifactId>chronicle-core</artifactId>
+            <version>2026.4-SNAPSHOT-rjm</version>
+        </dependency>
+
         <dependency>
             <groupId>net.openhft</groupId>
             <artifactId>assertions-${zero.cost.assertions}</artifactId>
@@ -70,11 +85,6 @@
         <dependency>
             <groupId>net.openhft</groupId>
             <artifactId>affinity</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>net.openhft</groupId>
-            <artifactId>chronicle-core</artifactId>
         </dependency>
 
         <dependency>
