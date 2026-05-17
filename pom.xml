@@ -65,7 +65,6 @@
         <dependency>
             <groupId>net.openhft</groupId>
             <artifactId>chronicle-core</artifactId>
-            <version>2026.4-SNAPSHOT-rjm</version>
         </dependency>
 
         <dependency>
