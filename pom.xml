@@ -17,10 +17,10 @@
 
     <artifactId>chronicle-map</artifactId>
 
-    <version>2026.2-SNAPSHOT-rjm</version>
+    <version>2026.2-rjm-SNAPSHOT</version>
     <name>OpenHFT/Chronicle-Map</name>
     <description>Chronicle-Map</description>
-    <packaging>bundle</packaging>
+    <packaging>jar</packaging>
     <properties>
         <zero.cost.assertions>disabled</zero.cost.assertions>
         <sonar.organization>openhft</sonar.organization>
@@ -29,6 +29,15 @@
         <jacoco.line.coverage>0.50</jacoco.line.coverage>
         <jacoco.branch.coverage>0.30</jacoco.branch.coverage>
     </properties>
+
+<!--    temporary until merged-->
+     <distributionManagement>
+        <repository>
+          <id>github-chronicle-map</id>
+          <name>github richmacdonald chronicle map</name>
+          <url>https://maven.pkg.github.com/richmacdonald/chronicle-map</url>
+        </repository>
+      </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
@@ -45,7 +54,7 @@
             <dependency>
                 <groupId>net.openhft</groupId>
                 <artifactId>chronicle-core</artifactId>
-                <version>2026.4-SNAPSHOT-rjm</version>
+                <version>2026.4-rjm-SNAPSHOT</version>
             </dependency>
 
             <dependency>
