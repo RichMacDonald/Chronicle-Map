@@ -23,11 +23,12 @@ public class CleanerUtils {
 	static BiFunction<Object, Runnable, Cleaner> init26() {
 		try {
 			Class<?> cleanerClass = Class.forName("java.lang.ref.Cleaner");
-			Method create = cleanerClass.getDeclaredMethod("create", Object.class, Runnable.class);
+			Method create = cleanerClass.getDeclaredMethod("create");
 			Jvm.setAccessible(create);
 			Object cleanerInstance = create.invoke(null);
 			Method createCleanable = cleanerClass.getDeclaredMethod("register", Object.class, Runnable.class);
-			Method clean = cleanerClass.getDeclaredMethod("clean");
+			Class<?> cleanableClass = Class.forName("java.lang.ref.Cleaner$Cleanable");
+			Method clean = cleanableClass.getDeclaredMethod("clean");
 			Jvm.setAccessible(create);
 			return new CleanFunction26(cleanerInstance, createCleanable, clean);
 		} catch (Exception e) {
